@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WANTED POSTER</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&family=Rye&family=Old+Standard+TT:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: linear-gradient(45deg, #8b4513, #a0522d, #cd853f);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        font-family: "Old Standard TT", serif;
+      }
+
+      .wanted-poster {
+        background: #f5e6d3;
+        width: 100%;
+        max-width: 400px;
+        padding: 30px;
+        border: 8px solid #8b4513;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.7),
+          inset 0 0 50px rgba(139, 69, 19, 0.2);
+        position: relative;
+        transform: rotate(-1deg);
+        animation: sway 6s ease-in-out infinite;
+      }
+
+      @keyframes sway {
+        0%,
+        100% {
+          transform: rotate(-1deg);
+        }
+        50% {
+          transform: rotate(1deg);
+        }
+      }
+
+      .wanted-poster::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 20px;
+        background: #8b4513;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .wanted-header {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .wanted-title {
+        font-family: "Rye", cursive;
+        font-size: 3rem;
+        color: #8b0000;
+        text-shadow: 3px 3px 0px #000;
+        margin-bottom: 10px;
+        transform: rotate(-2deg);
+      }
+
+      .reward {
+        font-family: "Old Standard TT", serif;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 15px;
+        border: 3px solid #8b0000;
+        padding: 8px;
+        background: #ffd700;
+        transform: rotate(1deg);
+      }
+
+      .photo-frame {
+        width: 200px;
+        height: 250px;
+        margin: 0 auto 25px;
+        border: 5px solid #8b4513;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transform: rotate(-1deg);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: sepia(20%) contrast(1.1);
+      }
+
+      .photo-placeholder {
+        color: #666;
+        text-align: center;
+        font-style: italic;
+        padding: 20px;
+      }
+
+      .bio-data {
+        background: rgba(255, 255, 255, 0.3);
+        padding: 20px;
+        border: 2px solid #8b4513;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .bio-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+        border-left: 4px solid #8b0000;
+      }
+
+      .bio-label {
+        font-weight: bold;
+        color: #8b0000;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .bio-value {
+        color: #000;
+        font-weight: 600;
+        text-align: right;
+      }
+
+      .crimes {
+        text-align: center;
+        margin-top: 20px;
+        padding: 15px;
+        background: #ffe4e1;
+        border: 2px dashed #8b0000;
+        border-radius: 10px;
+      }
+
+      .crimes h3 {
+        color: #8b0000;
+        margin-bottom: 10px;
+        font-family: "Creepster", cursive;
+        font-size: 1.3rem;
+      }
+
+      .crimes p {
+        color: #000;
+        font-style: italic;
+        line-height: 1.4;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.9rem;
+        color: #666;
+        font-style: italic;
+      }
+
+      /* Responsive */
+      @media (max-width: 480px) {
+        .wanted-poster {
+          padding: 20px;
+          max-width: 350px;
+        }
+
+        .wanted-title {
+          font-size: 2.5rem;
+        }
+
+        .photo-frame {
+          width: 150px;
+          height: 200px;
+        }
+
+        .bio-item {
+          flex-direction: column;
+          gap: 5px;
+          text-align: center;
+        }
+
+        .bio-value {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wanted-poster">
+      <div class="wanted-header">
+        <h1 class="wanted-title">WANTED</h1>
+        <div class="reward">REWARD: $10,000</div>
+      </div>
+
+      <div class="photo-frame">
+        <!-- Ganti src dengan URL foto yang diinginkan -->
+        <img src="gambar.jpg" alt="Foto Buronan" class="photo" />
+        <!-- Atau gunakan placeholder jika tidak ada foto -->
+        <!-- <div class="photo-placeholder">FOTO<br>BURONAN</div> -->
+      </div>
+
+      <div class="bio-data">
+        <div class="bio-item">
+          <span class="bio-label">Nama:</span>
+          <span class="bio-value">Javian Nugroho</span>
+        </div>
+        <div class="bio-item">
+          <span class="bio-label">Tahun Lahir:</span>
+          <span class="bio-value">2006</span>
+        </div>
+        <div class="bio-item">
+          <span class="bio-label">Umur:</span>
+          <span class="bio-value">19 Tahun</span>
+        </div>
+        <div class="bio-item">
+          <span class="bio-label">Tinggi:</span>
+          <span class="bio-value">165 cm</span>
+        </div>
+        <div class="bio-item">
+          <span class="bio-label">Berat:</span>
+          <span class="bio-value">70 kg</span>
+        </div>
+        <div class="bio-item">
+          <span class="bio-label">Ciri Khas:</span>
+          <span class="bio-value">Berotot Gede</span>
+        </div>
+        <div class="bio-item">
+          <span class="bio-label">Terakhir Terlihat:</span>
+          <span class="bio-value">Klaten, Indonesia</span>
+        </div>
+      </div>
+
+      <div class="crimes">
+        <h3>TUDUHAN:</h3>
+        <p>Maling ayam tetangga dan maling jemuran</p>
+      </div>
+
+      <div class="footer">
+        <p>DEAD OR ALIVE - HUBUNGI SHERIFF TERDEKAT</p>
+      </div>
+    </div>
+  </body>
+</html>
